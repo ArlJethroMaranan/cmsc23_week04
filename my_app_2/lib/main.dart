@@ -47,27 +47,28 @@ class _FormSampleState extends State<FormSample> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround ,
-        children: [
-          const ButtonSample(),
-          const TextFieldSample(),
-          const CheckBoxSample(),
-          const DropDownSample(),
-          OutlinedButton(
-            onPressed: () {
-              if (formKey.currentState!.validate()) {
-                print("Success");
-                formKey.currentState!.save();
-              } else {
-                print("Failed");
-              }
-            },
-            child: const Icon(Icons.send)
-          )
-        ],
+    return SingleChildScrollView(
+      child: Form(
+        key: formKey,
+        child: Column(
+          children: [
+            const ButtonSample(),
+            const TextFieldSample(),
+            const CheckBoxSample(),
+            const DropDownSample(),
+            OutlinedButton(
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  print("Success");
+                  formKey.currentState!.save();
+                } else {
+                  print("Failed");
+                }
+              },
+              child: const Icon(Icons.send)
+            )
+          ],
+        ),
       ),
     );
   }

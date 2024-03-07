@@ -26,7 +26,7 @@ class _ButtonSampleState extends State<ButtonSample> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(pokemon[index]),
+        Text(pokemon[index], style: const TextStyle(fontSize: 70),),
         const Icon(Icons.favorite)
       ],
     );
